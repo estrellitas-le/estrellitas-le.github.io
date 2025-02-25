@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHY/MAT 131 Coding Showcase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black; /* Black background */
+            margin: 0;
+            padding: 0;
+            color: #FF69B4; /* Hot pink text color */
+            border: 20px solid transparent; /* Add space for border */
+            background-clip: padding-box;
+            background-image: url('star-border.png'); /* Star border image */
+            background-repeat: repeat; /* Repeat the image */
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+        }
+        .project {
+            background-color: #222; /* Dark background for the projects */
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #444; /* Darker border */
+            border-radius: 8px;
+        }
+        .code-block {
+            background-color: #2e2e2e;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: "Courier New", Courier, monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>PHY/MAT 131 Coding Showcase</h1>
+        <p>Explore the coding projects I’ve worked on for the PHY/MAT 131 course!</p>
+    </header>
+
+    <nav>
+        <a href="#project1">Project 1</a>
+        <a href="#project2">Project 2</a>
+        <a href="#project3">Project 3</a>
+    </nav>
+
+    <section id="project1">
+        <div class="project">
+            <h2>Project 1: Physics Simulation in Python</h2>
+            <p>This project simulates the motion of an object under the influence of gravity using Python. It calculates position and velocity over time.</p>
+            <a href="#">View Code</a>
+            <div class="code-block">
+                <code>
+# Python code for physics simulation
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Constants
+g = 9.81  # acceleration due to gravity (m/s^2)
+initial_velocity = 0  # initial velocity (m/s)
+time = np.linspace(0, 10, 100)  # time array (seconds)
+
+# Calculating position and velocity
+position = initial_velocity * time + 0.5 * g * time**2
+velocity = initial_velocity + g * time
+
+# Plotting position and velocity
+plt.subplot(2, 1, 1)
+plt.plot(time, position)
+plt.title('Position vs Time')
+plt.xlabel('Time (s)')
+plt.ylabel('Position (m)')
+
+plt.subplot(2, 1, 2)
+plt.plot(time, velocity)
+plt.title('Velocity vs Time')
+plt.xlabel('Time (s)')
+plt.ylabel('Velocity (m/s)')
+
+plt.tight_layout()
+plt.show()
+                </code>
+            </div>
+        </div>
+    </section>
+
+    <section id="project2">
+        <div class="project">
+            <h2>Project 2: Matrix Operations in MATLAB</h2>
+            <p>This project demonstrates how to perform matrix operations in MATLAB, including solving systems of linear equations.</p>
+            <a href="#">View Code</a>
+            <div class="code-block">
+                <code>
+% MATLAB code for matrix operations
+A = [2, 3; 4, 5];   % Define matrix A
+b = [6; 7];         % Define vector b
+
+% Solve the system of equations Ax = b
+x = A\b;
+disp('Solution to the system of equations:');
+disp(x);
+                </code>
+            </div>
+        </div>
+    </section>
+
+    <section id="project3">
+        <div class="project">
+            <h2>Project 3: Numerical Integration</h2>
+            <p>This project demonstrates numerical integration using the trapezoidal rule to estimate the area under a curve.</p>
+            <a href="#">View Code</a>
+            <div class="code-block">
+                <code>
+# Python code for numerical integration (trapezoidal rule)
+import numpy as np
+
+# Function to integrate
+def f(x):
+    return x**2
+
+# Trapezoidal rule function
+def trapezoidal_rule(a, b, n):
+    x = np.linspace(a, b, n)
+    y = f(x)
+    return np.trapz(y, x)
+
+# Estimate the integral of f(x) = x^2 from 0 to 1
+integral_value = trapezoidal_rule(0, 1, 1000)
+print(f"Estimated integral value: {integral_value}")
+                </code>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Your Name | PHY/MAT 131 Coding Portfolio</p>
+    </footer>
+
+</body>
+</html>
