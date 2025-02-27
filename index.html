@@ -80,6 +80,7 @@
     <nav>
         <a href="#project1">Project 1</a>
         <a href="#project2">Project 2</a>
+        <a href="#project2_1">Project 2.1</a>
         <a href="#project3">Project 3</a>
         <a href="#project4">Project 4</a>
         <a href="#project5">Project 5</a>
@@ -98,156 +99,60 @@
 
     <section id="project2">
         <div class="project">
-            <h2>Project 2: Matrix Operations in MATLAB</h2>
-            <p>This project demonstrates how to perform matrix operations in MATLAB, including solving systems of linear equations.</p>
-            <a href="#">View Code</a>
-            <div class="code-block">
-                <code>
-% MATLAB code for matrix operations
-A = [2, 3; 4, 5];   % Define matrix A
-b = [6; 7];         % Define vector b
-
-% Solve the system of equations Ax = b
-x = A\b;
-disp('Solution to the system of equations:');
-disp(x);
-                </code>
-            </div>
+            <h2>Project 2: How Many Handshakes?</h2>
+            <p>This project calculates how many handshakes occur in a group of people where each person shakes hands with every other person exactly once. The code for this project is embedded in the following Trinket link:</p>
+            <a href="https://trinket.io/python/0f3cb434113f" target="_blank">View Code on Trinket</a>
+            <br><br>
+            <iframe src="https://trinket.io/python/0f3cb434113f" width="100%" height="500px" style="border:none;"></iframe>
         </div>
     </section>
 
+    <section id="project2_1">
+        <div class="project">
+            <h2>Project 2.1: How Many Trees?</h2>
+            <p>This project calculates the number of trees in a given area, based on certain assumptions and parameters. The code for this project is embedded in the following Trinket link:</p>
+            <a href="https://trinket.io/python/8a415703905ade" target="_blank">View Code on Trinket</a>
+            <br><br>
+            <iframe src="https://trinket.io/python/8a415703905ade" width="100%" height="500px" style="border:none;"></iframe>
+        </div>
+    </section>
+
+    <!-- New Project 3 -->
     <section id="project3">
         <div class="project">
-            <h2>Project 3: Numerical Integration</h2>
-            <p>This project demonstrates numerical integration using the trapezoidal rule to estimate the area under a curve.</p>
-            <a href="#">View Code</a>
-            <div class="code-block">
-                <code>
-# Python code for numerical integration (trapezoidal rule)
-import numpy as np
-
-# Function to integrate
-def f(x):
-    return x**2
-
-# Trapezoidal rule function
-def trapezoidal_rule(a, b, n):
-    x = np.linspace(a, b, n)
-    y = f(x)
-    return np.trapz(y, x)
-
-# Estimate the integral of f(x) = x^2 from 0 to 1
-integral_value = trapezoidal_rule(0, 1, 1000)
-print(f"Estimated integral value: {integral_value}")
-                </code>
-            </div>
+            <h2>Project 3: Drawing a Circle with Turtle</h2>
+            <p>This project demonstrates how to use the Turtle graphics library in Python to draw a circle. The code for this project is embedded in the following Trinket link:</p>
+            <a href="https://trinket.io/python/8a415703905a" target="_blank">View Code on Trinket</a>
+            <br><br>
+            <iframe src="https://trinket.io/python/8a415703905a" width="100%" height="500px" style="border:none;"></iframe>
         </div>
     </section>
 
-    <!-- New Project 4 -->
+    <!-- New Project 4: Generating a Password XKCD Style -->
     <section id="project4">
         <div class="project">
-            <h2>Project 4: Simple Harmonic Motion in Python</h2>
-            <p>This project simulates the motion of a mass-spring system undergoing simple harmonic motion using Python.</p>
-            <a href="#">View Code</a>
-            <div class="code-block">
-                <code>
-# Python code for simple harmonic motion
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Constants
-k = 1  # spring constant (N/m)
-m = 1  # mass (kg)
-omega = np.sqrt(k/m)  # angular frequency
-
-# Time array
-time = np.linspace(0, 10, 100)
-
-# Initial conditions
-x0 = 1  # initial displacement (m)
-v0 = 0  # initial velocity (m/s)
-
-# Solution to the SHM equation: x(t) = x0 * cos(omega * t)
-position = x0 * np.cos(omega * time)
-
-# Plotting position vs time
-plt.plot(time, position)
-plt.title('Position vs Time (Simple Harmonic Motion)')
-plt.xlabel('Time (s)')
-plt.ylabel('Position (m)')
-plt.show()
-                </code>
-            </div>
+            <h2>Project 4: Generating a Password XKCD Style</h2>
+            <p>This project demonstrates how to generate a secure password using the XKCD method by selecting random words to create a memorable yet secure password. The code for this project is embedded in the following Trinket link:</p>
+            <a href="https://trinket.io/python/fa12ea366711" target="_blank">View Code on Trinket</a>
+            <br><br>
+            <iframe src="https://trinket.io/python/fa12ea366711" width="100%" height="500px" style="border:none;"></iframe>
         </div>
     </section>
 
-    <!-- New Project 5 -->
+    <!-- New Project 5: Computing Statistics with Kiva Data -->
     <section id="project5">
         <div class="project">
-            <h2>Project 5: Fourier Transform in MATLAB</h2>
-            <p>This project demonstrates how to compute the Fourier transform of a signal in MATLAB.</p>
-            <a href="#">View Code</a>
-            <div class="code-block">
-                <code>
-% MATLAB code for Fourier Transform
-Fs = 1000;  % Sampling frequency
-t = 0:1/Fs:1-1/Fs;  % Time vector
-f = 50;  % Frequency of the signal
-
-% Generate a sine wave signal
-signal = sin(2*pi*f*t);
-
-% Compute the Fourier transform
-signal_fft = fft(signal);
-
-% Plot the magnitude of the Fourier transform
-frequencies = (0:length(signal)-1)*Fs/length(signal);
-plot(frequencies, abs(signal_fft))
-title('Magnitude of the Fourier Transform')
-xlabel('Frequency (Hz)')
-ylabel('Magnitude')
-                </code>
-            </div>
-        </div>
-    </section>
-
-    <!-- New Project 6 -->
-    <section id="project6">
-        <div class="project">
-            <h2>Project 6: Linear Regression in Python</h2>
-            <p>This project demonstrates linear regression using Python's scikit-learn library to predict values from a dataset.</p>
-            <a href="#">View Code</a>
-            <div class="code-block">
-                <code>
-# Python code for linear regression
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.linear_model import LinearRegression
-
-# Generate sample data
-X = np.random.rand(100, 1) * 10  # Random data for X (independent variable)
-y = 2.5 * X + np.random.randn(100, 1) * 2  # Linear relationship with some noise
-
-# Create a linear regression model
-model = LinearRegression()
-model.fit(X, y)
-
-# Predict values
-y_pred = model.predict(X)
-
-# Plotting the results
-plt.scatter(X, y, color='blue', label='Data')
-plt.plot(X, y_pred, color='red', label='Linear Regression Line')
-plt.title('Linear Regression')
-plt.xlabel('X')
-plt.ylabel('y')
-plt.legend()
-plt.show()
-                </code>
-            </div>
+            <h2>Project 5: Computing Statistics with Kiva Data</h2>
+            <p>This project demonstrates how to compute statistics on a dataset related to Kiva loans, including computing means, medians, and standard deviations. The code for this project is embedded in the following Trinket link:</p>
+            <a href="https://trinket.io/python/0f58151d7cdb" target="_blank">View Code on Trinket</a>
+            <br><br>
+            <iframe src="https://trinket.io/python/0f58151d7cdb" width="100%" height="500px" style="border:none;"></iframe>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Your Name | PHY/M
+        <p>&copy; 2025 Lissete Estrella | PHY/MAT 131 Coding Portfolio</p>
+    </footer>
+
+</body>
+</html>
