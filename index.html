@@ -7,10 +7,10 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: black; /* Black background */
+            background-color: #FFB6C1; /* Light pink background */
             margin: 0;
             padding: 0;
-            color: #FF69B4; /* Hot pink text color */
+            color: #2e2e2e; /* Dark text color for readability */
         }
         header {
             background-color: #FF69B4; /* Hot pink background */
@@ -24,7 +24,7 @@
         nav {
             display: flex;
             justify-content: center;
-            background-color: #333;
+            background-color: #FFB6C1; /* Light pink background */
         }
         nav a {
             color: white;
@@ -33,23 +33,26 @@
             text-align: center;
         }
         nav a:hover {
-            background-color: #ddd;
+            background-color: #FF69B4; /* Hot pink on hover */
             color: black;
         }
         section {
             padding: 20px;
             margin: 20px;
+            background-color: #FFB6C1; /* Light pink background */
+            border: 1px solid #FF69B4; /* Hot pink border */
+            border-radius: 8px;
         }
         .project {
-            background-color: #222; /* Dark background for the projects */
+            background-color: #FFB6C1; /* Light pink background */
             padding: 20px;
             margin-bottom: 20px;
-            border: 1px solid #444; /* Darker border */
+            border: 1px solid #FF69B4; /* Hot pink border */
             border-radius: 8px;
         }
         .code-block {
-            background-color: #2e2e2e;
-            color: white;
+            background-color: #FADCD9; /* Light pinkish color for code blocks */
+            color: #2e2e2e; /* Dark text color for code */
             padding: 15px;
             border-radius: 8px;
             font-family: "Courier New", Courier, monospace;
@@ -57,8 +60,8 @@
             word-wrap: break-word;
         }
         footer {
-            background-color: #333;
-            color: white;
+            background-color: #FFB6C1; /* Light pink background */
+            color: #2e2e2e; /* Dark text color */
             text-align: center;
             padding: 10px;
             position: fixed;
@@ -78,45 +81,18 @@
         <a href="#project1">Project 1</a>
         <a href="#project2">Project 2</a>
         <a href="#project3">Project 3</a>
+        <a href="#project4">Project 4</a>
+        <a href="#project5">Project 5</a>
+        <a href="#project6">Project 6</a>
     </nav>
 
     <section id="project1">
         <div class="project">
-            <h2>Project 1: Physics Simulation in Python</h2>
-            <p>This project simulates the motion of an object under the influence of gravity using Python. It calculates position and velocity over time.</p>
-            <a href="#">View Code</a>
-            <div class="code-block">
-                <code>
-# Python code for physics simulation
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Constants
-g = 9.81  # acceleration due to gravity (m/s^2)
-initial_velocity = 0  # initial velocity (m/s)
-time = np.linspace(0, 10, 100)  # time array (seconds)
-
-# Calculating position and velocity
-position = initial_velocity * time + 0.5 * g * time**2
-velocity = initial_velocity + g * time
-
-# Plotting position and velocity
-plt.subplot(2, 1, 1)
-plt.plot(time, position)
-plt.title('Position vs Time')
-plt.xlabel('Time (s)')
-plt.ylabel('Position (m)')
-
-plt.subplot(2, 1, 2)
-plt.plot(time, velocity)
-plt.title('Velocity vs Time')
-plt.xlabel('Time (s)')
-plt.ylabel('Velocity (m/s)')
-
-plt.tight_layout()
-plt.show()
-                </code>
-            </div>
+            <h2>Project 1: Driving the Turtle</h2>
+            <p>This project demonstrates how to control a turtle in Python, making it move around the screen. The code for this project is embedded in the following Trinket link:</p>
+            <a href="https://trinket.io/python/7c167c6c1911" target="_blank">View Code on Trinket</a>
+            <br><br>
+            <iframe src="https://trinket.io/python/7c167c6c1911" width="100%" height="500px" style="border:none;"></iframe>
         </div>
     </section>
 
@@ -168,9 +144,110 @@ print(f"Estimated integral value: {integral_value}")
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Your Name | PHY/MAT 131 Coding Portfolio</p>
-    </footer>
+    <!-- New Project 4 -->
+    <section id="project4">
+        <div class="project">
+            <h2>Project 4: Simple Harmonic Motion in Python</h2>
+            <p>This project simulates the motion of a mass-spring system undergoing simple harmonic motion using Python.</p>
+            <a href="#">View Code</a>
+            <div class="code-block">
+                <code>
+# Python code for simple harmonic motion
+import numpy as np
+import matplotlib.pyplot as plt
 
-</body>
-</html>
+# Constants
+k = 1  # spring constant (N/m)
+m = 1  # mass (kg)
+omega = np.sqrt(k/m)  # angular frequency
+
+# Time array
+time = np.linspace(0, 10, 100)
+
+# Initial conditions
+x0 = 1  # initial displacement (m)
+v0 = 0  # initial velocity (m/s)
+
+# Solution to the SHM equation: x(t) = x0 * cos(omega * t)
+position = x0 * np.cos(omega * time)
+
+# Plotting position vs time
+plt.plot(time, position)
+plt.title('Position vs Time (Simple Harmonic Motion)')
+plt.xlabel('Time (s)')
+plt.ylabel('Position (m)')
+plt.show()
+                </code>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Project 5 -->
+    <section id="project5">
+        <div class="project">
+            <h2>Project 5: Fourier Transform in MATLAB</h2>
+            <p>This project demonstrates how to compute the Fourier transform of a signal in MATLAB.</p>
+            <a href="#">View Code</a>
+            <div class="code-block">
+                <code>
+% MATLAB code for Fourier Transform
+Fs = 1000;  % Sampling frequency
+t = 0:1/Fs:1-1/Fs;  % Time vector
+f = 50;  % Frequency of the signal
+
+% Generate a sine wave signal
+signal = sin(2*pi*f*t);
+
+% Compute the Fourier transform
+signal_fft = fft(signal);
+
+% Plot the magnitude of the Fourier transform
+frequencies = (0:length(signal)-1)*Fs/length(signal);
+plot(frequencies, abs(signal_fft))
+title('Magnitude of the Fourier Transform')
+xlabel('Frequency (Hz)')
+ylabel('Magnitude')
+                </code>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Project 6 -->
+    <section id="project6">
+        <div class="project">
+            <h2>Project 6: Linear Regression in Python</h2>
+            <p>This project demonstrates linear regression using Python's scikit-learn library to predict values from a dataset.</p>
+            <a href="#">View Code</a>
+            <div class="code-block">
+                <code>
+# Python code for linear regression
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+
+# Generate sample data
+X = np.random.rand(100, 1) * 10  # Random data for X (independent variable)
+y = 2.5 * X + np.random.randn(100, 1) * 2  # Linear relationship with some noise
+
+# Create a linear regression model
+model = LinearRegression()
+model.fit(X, y)
+
+# Predict values
+y_pred = model.predict(X)
+
+# Plotting the results
+plt.scatter(X, y, color='blue', label='Data')
+plt.plot(X, y_pred, color='red', label='Linear Regression Line')
+plt.title('Linear Regression')
+plt.xlabel('X')
+plt.ylabel('y')
+plt.legend()
+plt.show()
+                </code>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Your Name | PHY/M
